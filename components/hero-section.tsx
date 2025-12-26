@@ -1,20 +1,22 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, MessageCircle, X } from "lucide-react"
-import Image from "next/image"
-import { useState } from "react"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, MessageCircle, X, Mail } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 export function HeroSection() {
-  const [showProfileImage, setShowProfileImage] = useState(false)
+  const [showProfileImage, setShowProfileImage] = useState(false);
 
   const handleOpenAIChat = () => {
-    const chatButton = document.querySelector("[data-ai-chat-button]") as HTMLButtonElement
+    const chatButton = document.querySelector(
+      "[data-ai-chat-button]"
+    ) as HTMLButtonElement;
     if (chatButton) {
-      chatButton.click()
+      chatButton.click();
     }
-  }
+  };
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 px-4 relative overflow-hidden">
@@ -41,7 +43,11 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4 text-balance">
             Nutchapol Kanokvechayun
           </h1>
@@ -53,7 +59,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <h2 className="text-xl sm:text-2xl text-primary font-medium mb-6">
-            Senior Full Stack Developer & Project Manager
+            Project Manager & Senior Full Stack Developer
           </h2>
         </motion.div>
 
@@ -63,8 +69,8 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto text-pretty"
         >
-          Over 8 years of experience delivering impactful enterprise software solutions and leading cross-functional
-          teams.
+          Over 8 years of experience delivering impactful enterprise software
+          solutions and leading cross-functional teams.
         </motion.p>
 
         <motion.div
@@ -79,10 +85,27 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
-          <Button onClick={handleOpenAIChat} variant="outline" size="lg" className="min-h-[44px] bg-transparent">
+
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="min-h-[44px] bg-transparent"
+          >
+            <a href="#contact">
+              <Mail className="mr-2 h-4 w-4" />
+              Contact Me
+            </a>
+          </Button>
+          {/* <Button
+            onClick={handleOpenAIChat}
+            variant="outline"
+            size="lg"
+            className="min-h-[44px] bg-transparent"
+          >
             <MessageCircle className="mr-2 h-4 w-4" />
             Talk with my AI Assistant
-          </Button>
+          </Button> */}
         </motion.div>
       </div>
 
@@ -109,5 +132,5 @@ export function HeroSection() {
         </div>
       )}
     </section>
-  )
+  );
 }

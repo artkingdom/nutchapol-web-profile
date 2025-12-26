@@ -25,10 +25,10 @@ export function AboutSection() {
           </h2>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Results-oriented Senior Full Stack Developer and Project Manager with over 8 years of experience. Expert in
+            Results oriented Senior Full Stack Developer and Project Manager with over 8 years of experience. Expert in
             bridging the gap between complex technical requirements and business goals. Proven track record in leading
-            digital transformation initiatives—ranging from <b>CRM Digital Loan Platforms</b> to{" "}
-            <b>ERP Smart Supply Chain Management</b>—leveraging hybrid methodologies that combine the strategic planning
+            digital transformation initiatives ranging from <b>CRM Digital Loan Platforms</b> to{" "}
+            <b>ERP Smart Supply Chain Management</b> leveraging hybrid methodologies that combine the strategic planning
             of Waterfall with the adaptability of Agile to ensure successful delivery.
           </p>
 
