@@ -25,19 +25,25 @@ export function AboutSection() {
           </h2>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Results oriented Senior Full Stack Developer and Project Manager with over 8 years of experience. Expert in
-            bridging the gap between complex technical requirements and business goals. Proven track record in leading
-            digital transformation initiatives ranging from <b>CRM Digital Loan Platforms</b> to{" "}
-            <b>ERP Smart Supply Chain Management</b> leveraging hybrid methodologies that combine the strategic planning
-            of Waterfall with the adaptability of Agile to ensure successful delivery.
+            Senior Software Consultant and Project Manager with 8 years of experience in enterprise digital
+            transformation across automotive, finance, logistics, and internal operations. Strong background in
+            AI-assisted software delivery, leveraging AI agents and Vibe Code to shorten development cycles while
+            maintaining quality and compliance. Experienced in end-to-end project lifecycles from technology selection
+            and requirement analysis to deployment, ensuring alignment with regulatory and business objectives.
           </p>
 
-          <div
-            className="flex items-center gap-3 text-primary hover:text-primary/80 cursor-pointer transition-colors"
-            onClick={() => setShowCertificate(true)}
-          >
-            <Award className="h-5 w-5" />
-            <span className="font-medium">Certified Professional Scrum Master I (View Certificate)</span>
+          <div className="space-y-2">
+            <div
+              className="flex items-center gap-3 text-primary hover:text-primary/80 cursor-pointer transition-colors"
+              onClick={() => setShowCertificate(true)}
+            >
+              <Award className="h-5 w-5" />
+              <span className="font-medium">Professional Scrum Master I (View Certificate)</span>
+            </div>
+            <div className="flex items-center gap-3 text-muted-foreground">
+              <Award className="h-5 w-5 text-primary" />
+              <span className="font-medium text-foreground">Gemini Educator</span>
+            </div>
           </div>
         </motion.div>
       </div>

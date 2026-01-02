@@ -11,7 +11,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Nutchapol Kanokvechayun | Senior Full Stack Developer & Project Manager",
   description:
-    "Over 8 years of experience delivering impactful enterprise software solutions and leading cross-functional teams.",
+    "Senior Software Consultant and Project Manager with 8 years of experience in enterprise digital transformation and AI-assisted delivery.",
   generator: "v0.app",
   icons: {
     icon: [

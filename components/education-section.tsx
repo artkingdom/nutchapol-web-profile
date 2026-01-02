@@ -8,14 +8,12 @@ import { GraduationCap } from "lucide-react"
 const education = [
   {
     degree: "MSc Information Systems Management",
-    institution: "University of Greenwich",
-    period: "2015 - 2016",
+    institutions: ["King Mongkut's University of Technology Thonburi", "University of Greenwich"],
+    period: "2010 - 2014, 2015 - 2016",
     type: "Master's Degree",
   },
   {
     degree: "BSc Information Technology",
-    institution: "King Mongkut's University of Technology Thonburi",
-    period: "2010 - 2014",
     type: "Bachelor's Degree",
   },
 ]
@@ -56,9 +54,15 @@ export function EducationSection() {
                   <div className="flex-grow">
                     <p className="text-sm text-primary font-medium mb-1">{edu.type}</p>
                     <h3 className="font-semibold text-foreground mb-1">{edu.degree}</h3>
-                    <p className="text-muted-foreground">{edu.institution}</p>
+                    {edu.institutions?.length
+                      ? edu.institutions.map((institution) => (
+                          <p key={institution} className="text-muted-foreground">
+                            {institution}
+                          </p>
+                        ))
+                      : edu.institution && <p className="text-muted-foreground">{edu.institution}</p>}
                   </div>
-                  <div className="text-sm text-muted-foreground">{edu.period}</div>
+                  {edu.period ? <div className="text-sm text-muted-foreground">{edu.period}</div> : null}
                 </div>
               </motion.div>
             ))}

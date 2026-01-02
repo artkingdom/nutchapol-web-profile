@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Mail, MapPin, Linkedin } from "lucide-react"
+import { Mail, MapPin, Linkedin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
@@ -48,14 +48,27 @@ export function ContactSection() {
                   </div>
                 </a>
 
+                <a
+                  href="tel:+66971376626"
+                  className="flex items-start gap-4 p-4 rounded-lg bg-background hover:bg-primary/5 transition-colors group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-muted-foreground mb-1">Tel</p>
+                    <p className="text-foreground font-medium">(+66) 97-137-6626</p>
+                  </div>
+                </a>
+
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-background">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground mb-1">Location</p>
-                    <p className="text-foreground font-medium">Bang Phli, Samut Prakan</p>
-                    <p className="text-sm text-muted-foreground">Thailand</p>
+                    <p className="text-foreground font-medium">34/10 Srinakarin Rd., Bang Keaw</p>
+                    <p className="text-sm text-muted-foreground">Bang Phli, Samut Prakan 10540, Thailand</p>
                   </div>
                 </div>
               </div>

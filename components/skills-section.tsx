@@ -4,38 +4,38 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Badge } from "@/components/ui/badge"
-import { Code, Layout, Server, Database, Wrench, Users } from "lucide-react"
+import { Code, Layout, Server, Database, Wrench, Sparkles } from "lucide-react"
 
 const skillCategories = [
   {
-    title: "Languages",
-    icon: Code,
-    skills: ["Java", "Kotlin", "PHP", "TypeScript", "JavaScript", "HTML", "CSS"],
+    title: "Project Management Tools",
+    icon: Wrench,
+    skills: ["Jira", "ClickUp", "Redmine"],
   },
   {
-    title: "Frontend",
+    title: "AI Development & Automation",
+    icon: Sparkles,
+    skills: ["AI-assisted Development", "Prompt Engineering", "Vibe Code", "n8n"],
+  },
+  {
+    title: "Programming & Languages",
+    icon: Code,
+    skills: ["Java", "Kotlin", "TypeScript", "JavaScript"],
+  },
+  {
+    title: "Frontend Development",
     icon: Layout,
     skills: ["React.js", "Next.js", "jQuery"],
   },
   {
-    title: "Backend",
+    title: "Backend & Frameworks",
     icon: Server,
-    skills: ["Spring Boot", "Laravel", "CodeIgniter", "Groovy on Grails"],
+    skills: ["Spring Boot", "Groovy on Grails"],
   },
   {
-    title: "Database",
+    title: "Databases",
     icon: Database,
-    skills: ["PostgreSQL", "Microsoft SQL", "MySQL"],
-  },
-  {
-    title: "Tools & AI",
-    icon: Wrench,
-    skills: ["Jira", "ClickUp", "Redmine", "Prompt Engineering", "n8n"],
-  },
-  {
-    title: "Management",
-    icon: Users,
-    skills: ["Agile/Scrum", "Requirement Analysis", "Resource Allocation", "Stakeholder Management", "Solution Design"],
+    skills: ["PostgreSQL", "Microsoft SQL Server", "MySQL"],
   },
 ]
 

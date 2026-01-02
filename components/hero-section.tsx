@@ -69,8 +69,9 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto text-pretty"
         >
-          Over 8 years of experience delivering impactful enterprise software
-          solutions and leading cross-functional teams.
+          Senior Software Consultant and Project Manager with 8 years of experience in enterprise digital
+          transformation. Delivers compliant, scalable systems and accelerates delivery with AI-assisted development
+          (Vibe Code).
         </motion.p>
 
         <motion.div
@@ -86,7 +87,7 @@ export function HeroSection() {
             </a>
           </Button>
 
-          <Button
+          {/* <Button
             asChild
             variant="outline"
             size="lg"
@@ -96,8 +97,8 @@ export function HeroSection() {
               <Mail className="mr-2 h-4 w-4" />
               Contact Me
             </a>
-          </Button>
-          {/* <Button
+          </Button> */}
+          <Button
             onClick={handleOpenAIChat}
             variant="outline"
             size="lg"
@@ -105,7 +106,7 @@ export function HeroSection() {
           >
             <MessageCircle className="mr-2 h-4 w-4" />
             Talk with my AI Assistant
-          </Button> */}
+          </Button>
         </motion.div>
       </div>
 

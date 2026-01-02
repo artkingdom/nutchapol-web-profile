@@ -7,32 +7,54 @@ import { Briefcase } from "lucide-react"
 
 const experiences = [
   {
+    company: "Independent Software Consultant (Freelance)",
+    period: "Jul 2025 - Present",
+    role: "Independent Software Consultant",
+    highlights: [
+      "Designed and delivered digital service operation systems for an automotive service company.",
+      "Reduced manual operations and delivery time by about 50%.",
+      "Applied AI-assisted development (Vibe Code) to accelerate system delivery.",
+    ],
+  },
+  {
     company: "Bluebik Group Public Company Limited",
     period: "Mar 2025 - Jun 2025",
     role: "Project Manager",
-    achievement:
-      "Facilitated daily stand-ups and tracked progress. Coordinated cross-team problem-solving and managed client-side escalation. Streamlined collaboration through structured issue management.",
+    highlights: [
+      "Facilitated Agile ceremonies across consulting teams.",
+      "Removed technical delivery blockers to maintain client milestones.",
+      "Ensured efficient resolution of critical delivery issues.",
+    ],
   },
   {
     company: "Smart Shift Solutions",
     period: "Jan 2020 - Feb 2025",
-    role: "Senior Full Stack Developer & Project Manager",
-    achievement:
-      "Led full project lifecycles for Digital Loan Platforms and IoT systems. Designed high-level module architecture and wireframes. Provided technical mentorship and code reviews to junior teams.",
+    role: "Project Manager & Senior Full Stack Developer",
+    highlights: [
+      "Delivered an ERP-based smart supply chain management system and led go-live execution.",
+      "Built a CRM-driven land collateral loan platform with online submissions and approval workflows.",
+      "Designed logistics modules to optimize truck load planning and delivery execution.",
+      "Coordinated HR and sales operations systems covering attendance, leave, and inventory workflows.",
+      "Implemented CRM features for a home service operation system to improve contractor queue management.",
+    ],
   },
   {
     company: "Smart Shift Solutions",
     period: "Apr 2018 - Jan 2020",
     role: "Software Engineer",
-    achievement:
-      "Developed a comprehensive Construction Management Web App for a real estate firm. Conducted operating system reviews and performance tuning.",
+    highlights: [
+      "Developed an enterprise construction management web application.",
+      "Integrated certificate, collateral, and approval workflows to improve project oversight.",
+    ],
   },
   {
     company: "Smart Shift Solutions",
     period: "May 2014 - Mar 2015",
     role: "Junior Programmer",
-    achievement:
-      "Streamlined sugar cane procurement processes with custom web apps. Developed a volunteer activity tracking system.",
+    highlights: [
+      "Developed web-based procurement tools.",
+      "Standardized supplier sourcing data and supported factory production planning.",
+    ],
   },
 ]
 
@@ -79,7 +101,13 @@ export function ExperienceSection() {
                       <span className="text-sm text-muted-foreground">{exp.period}</span>
                     </div>
                     <p className="text-primary font-medium mb-2">{exp.company}</p>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{exp.achievement}</p>
+                    {exp.highlights?.length ? (
+                      <ul className="text-muted-foreground text-sm leading-relaxed list-disc pl-5 space-y-1">
+                        {exp.highlights.map((highlight) => (
+                          <li key={highlight}>{highlight}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
                 </motion.div>
               ))}

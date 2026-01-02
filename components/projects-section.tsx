@@ -4,41 +4,49 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Building, Package, HardHat, Droplets } from "lucide-react"
+import { Car, Package, HardHat, Landmark, Truck } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 const projects = [
   {
-    title: "Digital Loan Management Platform",
+    title: "Automotive Service Operation System",
     description:
-      "Digitized manual loan application processes for land collateral loans. Designed user-friendly forms and structured approval workflows.",
-    icon: Building,
-    roles: ["Project Manager", "Full Stack Lead", "Progress Tracking"],
-    tech: ["Next.js", "Spring Boot", "PostgreSQL"],
+      "Designed and delivered digital service operations for an automotive service company, reducing manual work and delivery time by about 50% with AI-assisted development.",
+    icon: Car,
+    roles: ["Project Manager", "Consultant", "AI-assisted Delivery"],
+    tech: ["Service Operations", "Workflow Automation", "Vibe Code"],
   },
   {
-    title: "Smart Supply Chain System",
+    title: "Smart Supply Chain Management System",
     description:
-      "Developed front-end and back-end for inventory accuracy. Unified operations across warehouse and sales with a structured change request system.",
+      "Delivered an ERP-based supply chain system, led go-live execution, and managed change requests for continuous improvements.",
     icon: Package,
-    roles: ["Project Manager", "Full Stack Developer", "Operations Support"],
-    tech: ["React.js", "Spring Boot", "PostgreSQL"],
+    roles: ["Project Manager", "Software Developer", "Go-live Lead"],
+    tech: ["ERP", "Supply Chain", "Change Management"],
   },
   {
-    title: "Water Monitoring System",
+    title: "Land Collateral Loan Platform",
     description:
-      "Led requirements gathering and resource allocation for a real-time environmental monitoring solution.",
-    icon: Droplets,
-    roles: ["Project Manager", "Solution Architect", "Requirement Gathering"],
-    tech: ["React.js", "Spring Boot", "PostgreSQL", "MQTT"],
+      "Built a CRM-driven loan origination platform with online submissions, approval workflows, and contract execution.",
+    icon: Landmark,
+    roles: ["Project Manager", "Software Developer", "Requirements"],
+    tech: ["CRM", "Loan Origination", "Workflow"],
   },
   {
-    title: "Construction Management Web App",
+    title: "Logistics Management System",
     description:
-      "Tailored for a leading real estate firm. Integrated certificate, collateral, and approval management to enhance project oversight.",
+      "Designed logistics modules that optimized truck load planning and delivery execution to reduce scheduling time.",
+    icon: Truck,
+    roles: ["Project Coordinator", "Process Optimization"],
+    tech: ["Logistics", "Route Planning", "Operations"],
+  },
+  {
+    title: "Construction Management System",
+    description:
+      "Developed an enterprise web application with certificate, collateral, and approval workflows to improve project oversight.",
     icon: HardHat,
-    roles: ["Full Stack Developer", "System Optimization", "Operations Support"],
-    tech: ["Next.js", "Spring Boot", "PostgreSQL"],
+    roles: ["Software Engineer", "Workflow Design"],
+    tech: ["Approvals", "Certificates", "Collateral"],
   },
 ]
 
