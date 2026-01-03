@@ -34,11 +34,11 @@ export function HeroSection() {
             onClick={() => setShowProfileImage(true)}
           >
             <Image
-              src="/images/profile-image.jpg"
+              src="/images/profile-image.png"
               alt="Nutchapol Kanokvechayun"
               width={192}
               height={192}
-              className="object-cover"
+              className="h-full w-full rounded-full object-cover"
             />
           </div>
         </motion.div>
@@ -123,7 +123,7 @@ export function HeroSection() {
           </button>
           <div onClick={(e) => e.stopPropagation()} className="max-w-2xl">
             <Image
-              src="/images/profile-image.jpg"
+              src="/images/profile-image.png"
               alt="Nutchapol Kanokvechayun - Full Size"
               width={800}
               height={800}

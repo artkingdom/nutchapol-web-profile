@@ -65,7 +65,7 @@ export function Navigation() {
                 </a>
               </Button>
               <Button variant="default" size="sm" asChild className="h-9">
-                <a href="/cv-nutchapol-kanokvechayun.pdf" download>
+                <a href="/K.Nutchapol-Resume.pdf" download>
                   <Download className="h-3.5 w-3.5 mr-1.5" />
                   CV
                 </a>
@@ -118,7 +118,7 @@ export function Navigation() {
                 </a>
               </Button>
               <Button variant="default" size="sm" asChild className="ml-auto">
-                <a href="/cv-nutchapol-kanokvechayun.pdf" download>
+                <a href="/K.Nutchapol-Resume.pdf" download>
                   <Download className="h-3.5 w-3.5 mr-1.5" />
                   Download CV
                 </a>

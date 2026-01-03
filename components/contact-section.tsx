@@ -93,13 +93,13 @@ export function ContactSection() {
                 </a>
               </Button>
 
-              <div className="p-6 rounded-lg bg-background border border-border">
+              {/* <div className="p-6 rounded-lg bg-background border border-border">
                 <h4 className="font-semibold text-foreground mb-3">Quick Response</h4>
                 <p className="text-sm text-muted-foreground">
                   I typically respond to emails within 24-48 hours. For urgent matters, please mention it in your
                   subject line.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.div>
