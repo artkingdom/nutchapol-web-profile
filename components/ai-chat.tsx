@@ -7,12 +7,22 @@ import { motion, AnimatePresence } from "framer-motion"
 import { MessageCircle, X, Send, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import ReactMarkdown from "react-markdown"
 
 type Message = {
   id: string
   role: "user" | "assistant"
   content: string
   timestamp: Date
+}
+
+type ChatResponse = {
+  response?: string
+  message?: string
+  sessionId?: string
+  timestamp?: string
+  success?: boolean
+  error?: string
 }
 
 export function AIChat() {
@@ -28,6 +38,7 @@ export function AIChat() {
   ])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [sessionId, setSessionId] = useState("")
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const scrollToBottom = () => {
@@ -38,13 +49,18 @@ export function AIChat() {
     scrollToBottom()
   }, [messages])
 
+  useEffect(() => {
+    setSessionId(`session_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`)
+  }, [])
+
   const handleSendMessage = async () => {
     if (!input.trim() || isLoading) return
 
+    const trimmedInput = input.trim()
     const userMessage: Message = {
       id: Date.now().toString(),
       role: "user",
-      content: input.trim(),
+      content: trimmedInput,
       timestamp: new Date(),
     }
 
@@ -53,17 +69,17 @@ export function AIChat() {
     setIsLoading(true)
 
     try {
-      // Replace with your n8n webhook URL
-      const n8nWebhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL || "YOUR_N8N_WEBHOOK_URL_HERE"
+      const chatApiUrl = process.env.NEXT_PUBLIC_CHAT_API_URL || "/api/portfolio-chat"
 
-      const response = await fetch(n8nWebhookUrl, {
+      const response = await fetch(chatApiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: input.trim(),
-          conversationHistory: messages.map((msg) => ({
+          question: trimmedInput,
+          sessionId,
+          history: messages.slice(-6).map((msg) => ({
             role: msg.role,
             content: msg.content,
           })),
@@ -74,16 +90,22 @@ export function AIChat() {
         throw new Error("Failed to get response from AI")
       }
 
-      const data = await response.json()
+      const data: ChatResponse = await response.json()
+      if (data.success === false) {
+        throw new Error(data.error || "Failed to get response from AI")
+      }
 
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: data.message || data.response || "I'm not sure how to respond to that.",
-        timestamp: new Date(),
+        content: data.response || data.message || "I'm not sure how to respond to that.",
+        timestamp: data.timestamp ? new Date(data.timestamp) : new Date(),
       }
 
       setMessages((prev) => [...prev, assistantMessage])
+      if (data.sessionId && data.sessionId !== sessionId) {
+        setSessionId(data.sessionId)
+      }
     } catch (error) {
       console.error("Error sending message:", error)
       const errorMessage: Message = {
@@ -159,7 +181,13 @@ export function AIChat() {
                       message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
                     }`}
                   >
-                    <p className="text-sm">{message.content}</p>
+                    {message.role === "assistant" ? (
+                      <ReactMarkdown className="text-sm leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0 [&_ul]:ml-4 [&_ul]:list-disc [&_ol]:ml-4 [&_ol]:list-decimal [&_li]:mb-1 [&_strong]:font-semibold">
+                        {message.content}
+                      </ReactMarkdown>
+                    ) : (
+                      <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                    )}
                   </div>
                 </motion.div>
               ))}

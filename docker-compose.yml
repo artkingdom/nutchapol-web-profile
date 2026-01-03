@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    container_name: nutchapol-web-profile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+      # N8N_WEBHOOK_URL: "https://n8n.artnutchapol.me/webhook/portfolio-chat"
+      # NEXT_PUBLIC_CHAT_API_URL: "https://your-domain.com/api/portfolio-chat"
+    restart: unless-stopped
