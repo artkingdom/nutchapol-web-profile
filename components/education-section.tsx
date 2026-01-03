@@ -8,12 +8,14 @@ import { GraduationCap } from "lucide-react"
 const education = [
   {
     degree: "MSc Information Systems Management",
-    institutions: ["King Mongkut's University of Technology Thonburi", "University of Greenwich"],
-    period: "2010 - 2014, 2015 - 2016",
+    institutions: ["University of Greenwich"],
+    period: "2015 - 2016",
     type: "Master's Degree",
   },
   {
     degree: "BSc Information Technology",
+    institutions: ["King Mongkut's University of Technology Thonburi"],
+    period: "2010 - 2014",
     type: "Bachelor's Degree",
   },
 ]
